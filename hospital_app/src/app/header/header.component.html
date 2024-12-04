@@ -1,0 +1,32 @@
+<mat-toolbar color="primary" class="header-toolbar">
+  <div class="header-content">
+    <span class="hospital-name">Hospital Name</span>
+
+    <!-- Right Section: Navigation Links, Hamburger Button, and Logout -->
+    <div class="right-section">
+      <!-- Desktop Navigation Links moved to the right -->
+      <div class="nav-links">
+        <a mat-button routerLink="/home">HOME</a>
+        <a mat-button routerLink="/about">ABOUT US</a>
+        <a mat-button routerLink="/contact">CONTACT</a>
+      </div>
+
+      <!-- Hamburger Menu Button -->
+      <button mat-icon-button class="menu-button" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <!-- Mobile Menu -->
+      <div class="mobile-menu" [class.show]="isMenuOpen">
+        <div class="menu-item" (click)="navigateTo('/doctor-dashboard')">Dashboard</div>
+        <div class="menu-item" (click)="navigateTo('/doctor-appointment-details')">Appointment Details</div>
+      </div>
+
+      <!-- Logout Button -->
+      <button mat-button class="logout-btn" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </button>
+    </div>
+  </div>
+</mat-toolbar>

@@ -1,0 +1,61 @@
+.dashboard-container {
+    .header {
+      display: flex;
+      justify-content: flex-start;  // Align items to the left
+      align-items: center;
+      padding: 20px;
+      width: 100%;  // Ensure the header takes full width
+  
+      .bell-icon {
+        font-size: 30px;
+        margin-right: 10px;  // Optional: Space between bell icon and the title
+      }
+  
+      h1 {
+        font-size: 24px;
+        margin: 0;  // Remove any default margins to ensure proper alignment
+      }
+    }
+  
+    .view-appointments-btn {
+      margin-top: 20px;
+      text-align: right;  // Keep the button aligned to the right
+  
+      button {
+        font-size: 16px;
+        padding: 10px 20px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+  
+      mat-icon {
+        margin-right: 8px;  // Space between icon and text
+      }
+    }
+  
+    .appointments-table {
+      margin-top: 20px;
+  
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+  
+      th, td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+      }
+  
+      th {
+        background-color: #f4f4f4;
+        font-weight: bold;
+      }
+  
+      tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+    }
+  }
+  

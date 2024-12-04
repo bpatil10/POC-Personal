@@ -1,0 +1,51 @@
+<div class="login-container">
+  <div class="main-content">
+    <div class="welcome-section">
+      <img src="assets/rocket-icon.svg" alt="Welcome Icon" class="rocket-icon">
+      <h1>Welcome!</h1>
+    </div>
+
+    <div class="login-section">
+      <div class="user-type-toggle">
+        <button class="toggle-btn">Patient</button>
+        <button class="toggle-btn active">Doctor</button>
+        <button class="toggle-btn">Admin</button>
+      </div>
+
+      <h2>Login as Doctor</h2>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        <div class="form-group">
+          <label for="userName">User Name</label>
+          <input 
+            type="text" 
+            id="userName"
+            formControlName="userName"
+            placeholder="User Name"
+            [ngClass]="{'error': loginForm.get('userName')?.touched && loginForm.get('userName')?.invalid}"
+          >
+          <div class="error-message" *ngIf="loginForm.get('userName')?.touched && loginForm.get('userName')?.invalid">
+            User Name is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input 
+            type="password" 
+            id="password"
+            formControlName="password"
+            placeholder="Password"
+            [ngClass]="{'error': loginForm.get('password')?.touched && loginForm.get('password')?.invalid}"
+          >
+          <div class="error-message" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+            Password must be at least 8 characters
+          </div>
+        </div>
+
+        <!-- Submit Button with Disabled State -->
+        <button type="submit" [disabled]="loginForm.invalid" class="login-btn">Login</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="appointments-container">
+    <h2>Check your appointment details</h2>
+    
+    <div class="appointments-table">
+      <table>
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>Appointment Date</th>
+            <th>Appointment Time</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let appointment of appointments">
+            <td>{{ appointment.firstName }}</td>
+            <td>{{ appointment.lastName }}</td>
+            <td>{{ appointment.email }}</td>
+            <td>{{ appointment.contact }}</td>
+            <td>{{ appointment.appointmentDate }}</td>
+            <td>{{ appointment.appointmentTime }}</td>
+            <td>
+              <div class="action-buttons" *ngIf="appointment.status !== 'Confirmed'">
+                <button class="accept-btn" (click)="acceptAppointment(appointment)">Accept</button>
+                <button class="reschedule-btn" (click)="rescheduleAppointment(appointment)">Reschedule</button>
+              </div>
+              <span *ngIf="appointment.status === 'Confirmed'" class="confirmed-status">
+                Confirmed
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

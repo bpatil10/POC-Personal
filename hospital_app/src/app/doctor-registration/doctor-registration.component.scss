@@ -1,0 +1,171 @@
+
+
+.registration-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #813AFB;
+  padding: 20px;
+}
+
+.registration-card {
+  display: flex;
+  background-color: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-section {
+  background-color: #813AFB;
+  color: white;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+
+  .rocket-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin: 0;
+  }
+}
+
+.form-section {
+  flex: 1;
+  padding: 40px;
+  background-color: #f8f0ff;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+
+  .tab {
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+    border-radius: 20px;
+
+    &.active {
+      background-color: #813AFB;
+      color: white;
+    }
+  }
+}
+
+h1 {
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 24px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #444;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+
+    &:focus {
+      outline: none;
+      border-color:#813AFB;
+    }
+  }
+}
+
+.gender-group {
+  .radio-group {
+    display: flex;
+    gap: 20px;
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+}
+
+.error-message {
+  color: #ff3333;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.form-footer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .login-link {
+    color: #8a2be2;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .register-btn {
+    background-color:#813AFB;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: darken(#813AFB, 10%);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .registration-card {
+    flex-direction: column;
+  }
+
+  .welcome-section {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-section {
+    padding: 20px;
+  }
+}

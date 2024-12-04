@@ -1,0 +1,134 @@
+<div class="registration-container">
+  <div class="registration-card">
+    <div class="welcome-section">
+      <div class="rocket-icon">🚀</div>
+      <h2>Welcome</h2>
+    </div>
+    
+    <div class="form-section">
+      <div class="tabs">
+        <button class="tab">Patient</button>
+        <button class="tab active">Doctor</button>
+        <button class="tab">Admin</button>
+      </div>
+
+      <h1>Register As Doctor</h1>
+
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input 
+              id="firstName"
+              type="text"
+              formControlName="firstName"
+              placeholder="First Name"
+            >
+            <div class="error-message" *ngIf="registrationForm.get('firstName')?.touched && registrationForm.get('firstName')?.invalid">
+              First Name is required
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input 
+              id="lastName"
+              type="text"
+              formControlName="lastName"
+              placeholder="Last Name"
+            >
+            <div class="error-message" *ngIf="registrationForm.get('lastName')?.touched && registrationForm.get('lastName')?.invalid">
+              Last Name is required
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input 
+              id="email"
+              type="email"
+              formControlName="email"
+              placeholder="Email"
+            >
+            <div class="error-message" *ngIf="registrationForm.get('email')?.touched && registrationForm.get('email')?.invalid">
+              Please enter a valid email
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="contactNo">Contact No</label>
+            <input 
+              id="contactNo"
+              type="text"
+              formControlName="contactNo"
+              placeholder="Contact No"
+            >
+            <div class="error-message" *ngIf="registrationForm.get('contactNo')?.touched && registrationForm.get('contactNo')?.invalid">
+              Please enter a valid 10-digit number
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input 
+              id="password"
+              type="password"
+              formControlName="password"
+              placeholder="Password"
+            >
+            <div class="error-message" *ngIf="registrationForm.get('password')?.touched && registrationForm.get('password')?.invalid">
+              Password must be at least 8 characters
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input 
+              id="confirmPassword"
+              type="password"
+              formControlName="confirmPassword"
+              placeholder="Confirm Password"
+            >
+            <div class="error-message" *ngIf="registrationForm.get('confirmPassword')?.touched && registrationForm.get('confirmPassword')?.errors?.['passwordMismatch']">
+              Passwords do not match
+            </div>
+          </div>
+
+          <div class="form-group gender-group">
+            <label>Gender</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" formControlName="gender" value="male"> Male
+              </label>
+              <label>
+                <input type="radio" formControlName="gender" value="female"> Female
+              </label>
+            </div>
+            <div class="error-message" *ngIf="registrationForm.get('gender')?.touched && registrationForm.get('gender')?.invalid">
+              Please select a gender
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="specialty">Specialty</label>
+            <input 
+              id="specialty"
+              type="text"
+              formControlName="specialty"
+              placeholder="Specialty"
+            >
+            <div class="error-message" *ngIf="registrationForm.get('specialty')?.touched && registrationForm.get('specialty')?.invalid">
+              Specialty is required
+            </div>
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <a [routerLink]="'/login'" class="login-link">Already have an account?</a>
+          <button type="submit" class="register-btn">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+    

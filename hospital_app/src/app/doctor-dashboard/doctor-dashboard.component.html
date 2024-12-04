@@ -1,0 +1,19 @@
+<div class="dashboard-container">
+  <div class="dashboard-header">
+    <h1>Doctor Dashboard</h1>
+  </div>
+
+  <div class="dashboard-links">
+    <!-- View Appointments with Material Icon -->
+    <a [routerLink]="'/doctor-appointments'" class="dashboard-link">
+      <mat-icon>event</mat-icon> <!-- event icon for appointments -->
+      <span>View Appointments</span>
+    </a>
+
+    <!-- Meetings with Material Icon -->
+    <a [routerLink]="'/doctor-appointment-details'" class="dashboard-link">
+      <mat-icon>videocam</mat-icon> <!-- videocam icon for meetings -->
+      <span>Meetings</span>
+    </a>
+  </div>
+</div>
